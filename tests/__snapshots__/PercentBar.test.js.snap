@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PercentBar Should renders without problems 1`] = `
+<PercentBar
+  title="Реализованные"
+  values={
+    Array [
+      Object {
+        "count": 8,
+        "id": 1,
+        "percent": 4,
+        "title": "Порча товара",
+      },
+      Object {
+        "count": 16,
+        "id": 7,
+        "percent": 8,
+        "title": "Продажа китайцам",
+      },
+      Object {
+        "count": 4,
+        "id": 2,
+        "percent": 2,
+        "title": "Хищение товара",
+      },
+      Object {
+        "count": 2,
+        "id": 3,
+        "percent": 1,
+        "title": "Отбор контрольных образцов",
+      },
+      Object {
+        "count": 3,
+        "id": 4,
+        "percent": 1.5,
+        "title": "Демонстрация на выставках и ярмарках",
+      },
+      Object {
+        "count": 3,
+        "id": 5,
+        "percent": 1.5,
+        "title": "Иное",
+      },
+    ]
+  }
+>
+  <div>
+    <Heading>
+      <Heading__Elem>
+        <div
+          className="Heading__Elem-ciBIDr hXfOPr"
+        >
+          <LeftPart>
+            <LeftPart__Elem
+              color="#000000"
+              fontSize="10px"
+              fontWeight="bold"
+            >
+              <div
+                className="LeftPart__Elem-iigiGQ fasiYd"
+                color="#000000"
+                fontSize="10px"
+                fontWeight="bold"
+              >
+                Реализованные
+              </div>
+            </LeftPart__Elem>
+          </LeftPart>
+          <RightPart>
+            <RightPart__Elem
+              color="#1a99f4"
+              fontSize="10px"
+              fontWeight="bold"
+            >
+              <div
+                className="RightPart__Elem-cFEsJG clxYSa"
+                color="#1a99f4"
+                fontSize="10px"
+                fontWeight="bold"
+              >
+                <ClickWrap__IconWrap
+                  onClick={[Function]}
+                >
+                  <div
+                    className="ClickWrap__IconWrap-hfVMP haPscs"
+                    onClick={[Function]}
+                  >
+                    36
+                     шт
+                    <IconWrap__ClickWrap
+                      rotation={false}
+                    >
+                      <div
+                        className="IconWrap__ClickWrap-iIlZzn bLqNMl"
+                      >
+                        <BottomArrow
+                          fill="#212C42"
+                          height="6"
+                          viewBox="0 0 10 6"
+                          width="10"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <svg
+                            fill="#212C42"
+                            height="6"
+                            viewBox="0 0 10 6"
+                            width="10"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              clipRule="evenodd"
+                              d="M9.669 1.887a1.087 1.087 0 0 0 0-1.563 1.145 1.145 0 0 0-1.596 0L4.999 3.332 1.927.324a1.145 1.145 0 0 0-1.596 0 1.087 1.087 0 0 0 0 1.563l3.87 3.79c.222.215.51.323.798.323.29 0 .578-.108.799-.324l3.87-3.79z"
+                              fillRule="evenodd"
+                            />
+                          </svg>
+                        </BottomArrow>
+                      </div>
+                    </IconWrap__ClickWrap>
+                  </div>
+                </ClickWrap__IconWrap>
+              </div>
+            </RightPart__Elem>
+          </RightPart>
+        </div>
+      </Heading__Elem>
+    </Heading>
+    <BarInnerWrap>
+      <BarInnerWrap__Elem
+        background="#cde6f9"
+      >
+        <div
+          className="BarInnerWrap__Elem-loXuwt dTNAkN"
+        >
+          <Bar
+            percent={18}
+          >
+            <Bar__Elem
+              background="#1a99f4"
+              color="#ffffff"
+              fontSize="10px"
+              fontWeight="bold"
+              percent={18}
+            >
+              <div
+                className="Bar__Elem-bgqtQY eIlVyH"
+                color="#ffffff"
+                fontSize="10px"
+                fontWeight="bold"
+              >
+                18%
+              </div>
+            </Bar__Elem>
+          </Bar>
+        </div>
+      </BarInnerWrap__Elem>
+    </BarInnerWrap>
+  </div>
+</PercentBar>
+`;
