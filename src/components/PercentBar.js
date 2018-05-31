@@ -118,7 +118,9 @@ class PercentBar extends Component {
 
 PercentBar.propTypes = {
   values: PropTypes.array,
-  title: PropTypes.string
+  title: PropTypes.string,
+  value: PropTypes.any,
+  count: PropTypes.any
 };
 
 PercentBar.defaultProps = {};
