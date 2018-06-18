@@ -123,7 +123,7 @@ PercentBar.propTypes = {
   title: PropTypes.string,
   value: PropTypes.any,
   count: PropTypes.any,
-  theme: PropTypes.obj
+  theme: PropTypes.object
 };
 
 PercentBar.defaultProps = {
