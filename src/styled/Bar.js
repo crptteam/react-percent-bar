@@ -1,11 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { getThemeAsPlainTextByKeys } from '../utils';
-import defaultTheme from '../theme/defaultTheme';
+import { getThemeAsPlainTextByKeys, innerMerge } from "../utils";
+import defaultTheme from "../theme/defaultTheme";
 
 const Elem = styled.div`
-  width: ${props => props.percent + '%'};
+  width: ${props => props.percent + "%"};
   background: ${props => props.background};
   js-display: flex;
   display: flex;
@@ -18,14 +18,21 @@ const Elem = styled.div`
 `;
 
 const Bar = props => {
-  const theme = getThemeAsPlainTextByKeys(props.theme || defaultTheme);
-
-  Object.assign(
-    theme,
-    getThemeAsPlainTextByKeys(
-      (props.theme && props.theme.Bar) || defaultTheme.Bar
-    )
+  const merged = innerMerge(
+    {},
+    defaultTheme.PercentBar,
+    (props.theme && props.theme.PercentBar) || {}
   );
+
+  const theme = getThemeAsPlainTextByKeys(merged);
+
+  const mergedBar = innerMerge(
+    {},
+    defaultTheme.PercentBar.Bar,
+    (props.theme && props.theme.PercentBar && props.theme.PercentBar.Bar) || {}
+  );
+
+  Object.assign(theme, getThemeAsPlainTextByKeys(mergedBar));
 
   return <Elem {...theme} {...props} />;
 };

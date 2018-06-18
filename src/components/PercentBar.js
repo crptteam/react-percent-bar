@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import {withTheme} from 'styled-components';
 
 import Heading from '../styled/Heading';
 import LeftPart from '../styled/LeftPart';
@@ -120,9 +121,10 @@ PercentBar.propTypes = {
   values: PropTypes.array,
   title: PropTypes.string,
   value: PropTypes.any,
-  count: PropTypes.any
+  count: PropTypes.any,
+  theme: PropTypes.obj
 };
 
 PercentBar.defaultProps = {};
 
-export default PercentBar;
+export default withTheme(PercentBar);
