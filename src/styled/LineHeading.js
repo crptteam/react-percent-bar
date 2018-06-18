@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { getThemeAsPlainTextByKeys } from '../utils';
-import defaultTheme from '../theme/defaultTheme';
+import { getThemeAsPlainTextByKeys, innerMerge } from "../utils";
+import defaultTheme from "../theme/defaultTheme";
 
 const Elem = styled.div`
   font-size: ${props => props.fontSize};
@@ -15,16 +15,24 @@ const Elem = styled.div`
 `;
 
 const LineHeading = props => {
-  const theme = getThemeAsPlainTextByKeys(props.theme || defaultTheme);
-
-  Object.assign(
-    theme,
-    getThemeAsPlainTextByKeys(
-      (props.theme && props.theme.Heading) || defaultTheme.Heading
-    )
+  const merged = innerMerge(
+    {},
+    defaultTheme.PercentBar,
+    (props.theme && props.theme.PercentBar) || {}
   );
 
-  return <Elem {...theme} {...props}  />;
+  const theme = getThemeAsPlainTextByKeys(merged);
+
+  const mergedHeading = innerMerge(
+    {},
+    defaultTheme.PercentBar.Heading,
+    (props.theme && props.theme.PercentBar && props.theme.PercentBar.Heading) ||
+      {}
+  );
+
+  Object.assign(theme, getThemeAsPlainTextByKeys(mergedHeading));
+
+  return <Elem {...theme} {...props} />;
 };
 
 export default LineHeading;

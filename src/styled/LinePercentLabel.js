@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { getThemeAsPlainTextByKeys } from "../utils";
+import { getThemeAsPlainTextByKeys, innerMerge } from "../utils";
 import defaultTheme from "../theme/defaultTheme";
 
 const Elem = styled.div`
@@ -22,14 +22,22 @@ const Elem = styled.div`
 `;
 
 const LinePercentLabel = props => {
-  const theme = getThemeAsPlainTextByKeys(props.theme || defaultTheme);
-
-  Object.assign(
-    theme,
-    getThemeAsPlainTextByKeys(
-      (props.theme && props.theme.Label) || defaultTheme.Label
-    )
+  const merged = innerMerge(
+    {},
+    defaultTheme.PercentBar,
+    (props.theme && props.theme.PercentBar) || {}
   );
+
+  const theme = getThemeAsPlainTextByKeys(merged);
+
+  const mergedLabel = innerMerge(
+    {},
+    defaultTheme.PercentBar.Label,
+    (props.theme && props.theme.PercentBar && props.theme.PercentBar.Label) ||
+      {}
+  );
+
+  Object.assign(theme, getThemeAsPlainTextByKeys(mergedLabel));
 
   return <Elem {...theme} {...props} />;
 };

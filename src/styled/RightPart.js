@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { getThemeAsPlainTextByKeys } from '../utils';
-import defaultTheme from '../theme/defaultTheme';
+import { getThemeAsPlainTextByKeys, innerMerge } from "../utils";
+import defaultTheme from "../theme/defaultTheme";
 
 const Elem = styled.div`
   font-weight: ${props => props.fontWeight};
@@ -11,16 +11,24 @@ const Elem = styled.div`
 `;
 
 const RightPart = props => {
-  const theme = getThemeAsPlainTextByKeys(props.theme || defaultTheme);
-
-  Object.assign(
-    theme,
-    getThemeAsPlainTextByKeys(
-      (props.theme && props.theme.Heading.RightPart) ||
-        defaultTheme.Heading.RightPart
-    )
+  const merged = innerMerge(
+    {},
+    defaultTheme.PercentBar,
+    (props.theme && props.theme.PercentBar) || {}
   );
 
+  const theme = getThemeAsPlainTextByKeys(merged);
+
+  const mergedRightPart = innerMerge(
+    {},
+    defaultTheme.PercentBar.RightPart,
+    (props.theme &&
+      props.theme.PercentBar &&
+      props.theme.PercentBar.RightPart) ||
+      {}
+  );
+
+  Object.assign(theme, getThemeAsPlainTextByKeys(mergedRightPart));
   return <Elem {...theme} {...props} />;
 };
 
