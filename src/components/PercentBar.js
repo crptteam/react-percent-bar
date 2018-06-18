@@ -26,6 +26,7 @@ import {
   getTotalPercent,
   formatForThousands
 } from '../utils';
+import defaultTheme from '../theme/defaultTheme';
 
 class PercentBar extends Component {
   constructor(props) {
@@ -125,6 +126,8 @@ PercentBar.propTypes = {
   theme: PropTypes.obj
 };
 
-PercentBar.defaultProps = {};
+PercentBar.defaultProps = {
+  theme: defaultTheme
+};
 
 export default withTheme(PercentBar);
