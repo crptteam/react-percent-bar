@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { getThemeAsPlainTextByKeys, innerMerge } from "../utils";
+import { getThemeAsPlainObjectByKeys, innerMerge } from "../utils";
 import defaultTheme from "../theme/defaultTheme";
 
 const Elem = styled.div`
@@ -21,7 +21,7 @@ const LineHeading = props => {
     (props.theme && props.theme.PercentBar) || {}
   );
 
-  const theme = getThemeAsPlainTextByKeys(merged);
+  const theme = getThemeAsPlainObjectByKeys(merged);
 
   const mergedHeading = innerMerge(
     {},
@@ -30,7 +30,7 @@ const LineHeading = props => {
       {}
   );
 
-  Object.assign(theme, getThemeAsPlainTextByKeys(mergedHeading));
+  Object.assign(theme, getThemeAsPlainObjectByKeys(mergedHeading));
 
   return <Elem {...theme} {...props} />;
 };
